@@ -1,7 +1,7 @@
 from rest_framework import status, generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.contrib.auth import get_user_model
 
 from .serializers import (
@@ -22,6 +22,7 @@ class SignupView(APIView):
     POST /signup/
     Creates a new user account.
     """
+    permission_classes = [AllowAny]
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
@@ -37,7 +38,6 @@ class BaseDataCreateView(APIView):
     - serializer_class
     - model_class (optional for further customization)
     """
-    permission_classes = [IsAuthenticated]
     serializer_class = None
     model_class = None
 
