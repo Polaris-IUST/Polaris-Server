@@ -54,6 +54,7 @@ class BaseDataCreateView(APIView):
 # ------- MapData Views -------
 class MapDataCreateView(BaseDataCreateView):
     serializer_class = MapDataSerializer
+    permission_classes = [IsAuthenticated]
     model_class = MapData
 
 
@@ -72,6 +73,7 @@ class MapDataListView(generics.ListAPIView):
 # ------- DNSData Views -------
 class DNSDataCreateView(BaseDataCreateView):
     serializer_class = DNSDataSerializer
+    permission_classes = [IsAuthenticated]
     model_class = DNSData
 
 
@@ -86,6 +88,7 @@ class DNSDataListView(generics.ListAPIView):
 # ------- HTTPResponse Views -------
 class HTTPResponseCreateView(BaseDataCreateView):
     serializer_class = HTTPResponseSerializer
+    permission_classes = [IsAuthenticated]
     model_class = HTTPResponse
 
 
@@ -100,6 +103,7 @@ class HTTPResponseListView(generics.ListAPIView):
 # ------- SMSTest Views -------
 class SMSTestCreateView(BaseDataCreateView):
     serializer_class = SMSTestSerializer
+    permission_classes = [IsAuthenticated]
     model_class = SMSTest
 
 
@@ -114,6 +118,7 @@ class SMSTestListView(generics.ListAPIView):
 # ------- PingTest Views -------
 class PingTestCreateView(BaseDataCreateView):
     serializer_class = PingTestSerializer
+    permission_classes = [IsAuthenticated]
     model_class = PingTest
 
 
@@ -128,6 +133,7 @@ class PingTestListView(generics.ListAPIView):
 # ------- DownloadTest Views -------
 class DownloadTestCreateView(BaseDataCreateView):
     serializer_class = DownloadTestSerializer
+    permission_classes = [IsAuthenticated]
     model_class = DownloadTest
 
 
@@ -142,6 +148,7 @@ class DownloadTestListView(generics.ListAPIView):
 # ------- UploadTest Views -------
 class UploadTestCreateView(BaseDataCreateView):
     serializer_class = UploadTestSerializer
+    permission_classes = [IsAuthenticated]
     model_class = UploadTest
 
 
@@ -156,6 +163,7 @@ class UploadTestListView(generics.ListAPIView):
 # ------- MeasuredLatency Views -------
 class MeasuredLatencyCreateView(BaseDataCreateView):
     serializer_class = MeasuredLatencySerializer
+    permission_classes = [IsAuthenticated]
     model_class = MeasuredLatency
 
 
