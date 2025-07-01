@@ -61,6 +61,7 @@ class PingTest(models.Model):
     latitude = models.FloatField()
     avgResponseTime = models.FloatField()
     suceessCountRate = models.FloatField()
+    hostname=models.CharField(255, default="google.com")
     time = models.DateTimeField()
 
 
