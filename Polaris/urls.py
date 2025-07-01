@@ -1,5 +1,5 @@
 from django.urls import path
-from rest_framework.authtoken.views import obtain_auth_token
+
 from .views import (
     SignupView,
 
@@ -10,12 +10,12 @@ from .views import (
     PingTestCreateView, PingTestListView,
     DownloadTestCreateView, DownloadTestListView,
     UploadTestCreateView, UploadTestListView,
-    MeasuredLatencyCreateView, MeasuredLatencyListView,
+    MeasuredLatencyCreateView, MeasuredLatencyListView, ObtainAuthTokenByEmail
 )
 
 urlpatterns = [
     # Get access token
-    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+    path('api-token-auth/', ObtainAuthTokenByEmail.as_view(), name='api_token_auth'),
     path('signup/', SignupView.as_view(), name='signup'),
 
     # MapData
