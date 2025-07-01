@@ -95,8 +95,8 @@ DATABASES = {
         'NAME': os.getenv("MYSQL_DB_NAME"),
         'USER': os.getenv("MYSQL_DB_USER"),
         'PASSWORD': os.getenv("MYSQL_DB_PASSWORD"),
-        'HOST': f'{MYSQL_URL}',
-        'PORT': '3306',
+        'HOST': os.getenv("MYSQL_DB_HOST", "localhost"),
+        'PORT': os.getenv("MYSQL_DB_PORT", "3306"),
     }
 }
 
